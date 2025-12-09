@@ -1,85 +1,40 @@
-"""
-Python Console Calculator Program
+# Simple Calculator (Python)
 
-Description:
-This script provides a basic command-line interface (CLI) calculator.
-It defines separate functions for the four core arithmetic operations
-(addition, subtraction, multiplication, and division) and uses conditional
-logic (if/elif/else) to execute the chosen operation based on user input.
+This project is a basic **Simple Calculator** built using Python.  
+It performs four operations:
 
-The program prompts the user for the desired operation symbol (+, -, *, /)
-and two numeric inputs (x and y).
+- Addition  
+- Subtraction  
+- Multiplication  
+- Division (with zero-division handling)
 
-Note: This version uses simple input conversion (int) and does not include
-robust error handling for non-numeric input or division by zero, which is
-recommended for professional production code.
-"""
+The project includes user input, menu selection, and separate functions for each operation.
 
-def sum(x, y):
-    """
-    Calculates the sum of two numbers.
+---
 
-    :param x: The first number.
-    :param y: The second number.
-    :return: The sum (x + y).
-    """
-    return x + y
+## Functions Used
 
-def dif(x, y):
-    """
-    Calculates the difference between the first and second number.
+### `add(a, b)`
+Returns the sum of two numbers.
 
-    :param x: The first number (minuend).
-    :param y: The second number (subtrahend).
-    :return: The difference (x - y).
-    """
-    return x - y
+### `subtract(a, b)`
+Returns the difference of two numbers.
 
-def mul(x, y):
-    """
-    Calculates the product of two numbers.
+### `multiply(a, b)`
+Returns the product of two numbers.
 
-    :param x: The first number.
-    :param y: The second number.
-    :return: The product (x * y).
-    """
-    return x * y
+### `divide(a, b)`
+Returns the quotient.  
+If the second number is **0**, it returns an error message.
 
-def div(x, y):
-    """
-    Calculates the quotient when dividing the first number by the second.
+---
 
-    :param x: The numerator (dividend).
-    :param y: The denominator (divisor).
-    :return: The quotient (x / y).
-    """
-    # Note: A simple division is performed here; division by zero is not handled.
-    return x / y
+## How It Works
 
-# --- Main Program Execution ---
+1. The user chooses an operation (1 to 4)
+2. The user enters two numbers
+3. The calculator calls the correct function
+4. The result is displayed to the user
 
-# 1. Get the operation choice from the user
-z = input("enter the opeation you want to prform +,-,*,/:")
+---
 
-# 2. Get the first number (converted to an integer)
-x = int(input("enter the first number:"))
-
-# 3. Get the second number (converted to an integer)
-y = int(input("enter the second number:"))
-
-# 4. Use conditional statements to perform the selected operation
-if z == "+":
-    print('the sum is:', sum(x, y))
-elif z == "-":
-    print('the difference is:', dif(x, y))
-elif z == "*":
-    print('the product is:', mul(x, y))
-elif z == "/":
-    # Checks to prevent division by zero before calling the function
-    if y != 0:
-        print('the quotient:', div(x, y))
-    else:
-        print("Error: Cannot divide by zero.")
-else:
-    # Handles cases where the operation symbol is not recognized
-    print("invalid operation")

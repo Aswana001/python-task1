@@ -1,49 +1,34 @@
-print("you have 4 options")
-print("Addition- 1")
-print("subtraction- 2")
-print("multiplication- 3")
-print("divisionn-4")
-def add(a,b):
-    return a+b
-def sub(a,b):
-    return a-b
-def mul(a,b):
-    return a*b
-def div(a,b):
-    return a//b
-
-def calculator():
-    s=True
-    a=int(input('enter the first number '))
-    while s :
-        b = int(input('enter the second number '))  
-        choice = int(input("enter your choice "))
-        if choice == 1:
-            a = add(a,b)
-            print(a)
-        elif choice == 2:
-            a = sub(a,b)
-            print(a)
-        elif choice == 3:
-            a = mul(a,b)
-            print(a)
-        elif choice == 4:
-            if b==0:
-                print("divid by zero not possible")
-                b = int(input('enter the second number '))
-            a = div(a,b)
-            print(a)
-        w = input("do you want to Continue / Restart / Stop c/r/s ").lower()
-        if w == 'c':
-            continue
-        elif w == 'r':
-            calculator()
-        else:
-            s = False
-calculator()
+def add(a, b):
+    return a + b
+def subtract(a, b):
+    return a - b
+def multiply(a, b):
+    return a * b
+def divide(a, b):
+    if b == 0:
+        return "Division by zero is not allowed"
+    return a / b
+while True:
+    print("SIMPLE CALCULATOR")
+    print("1. ADD")
+    print("2. SUBTRACT")
+    print("3. MULTIPLY")
+    print("4. DIVIDE")
+    print("5. EXIT")
+    choice = input("Enter your choice: ")
+    if choice == '5':
+        print("Exiting calculator...")
+        break
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    if choice == '1':
+        print("Result:", add(a, b))
+    elif choice == '2':
+        print("Result:", subtract(a, b))
+    elif choice == '3':
+        print("Result:", multiply(a, b))
+    elif choice == '4':
+        print("Result:", divide(a, b))
+    else:
+        print("INVALID CHOICE")
         
-        
-
-
-
-
